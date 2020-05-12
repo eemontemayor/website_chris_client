@@ -1,0 +1,9 @@
+.carousel__page {
+	display: flex;
+	height: 100vh;
+	background-color: white;
+}
+		 .carousel__page div {
+			margin: auto;
+			background-color: aquamarine;
+		}

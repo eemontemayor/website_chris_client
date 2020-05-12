@@ -1,0 +1,64 @@
+
+.carousel__wrapper {
+	border-radius: 5px;
+	box-shadow: 0 1rem 2rem rgba(purple, .2);
+	margin: 2rem auto;
+	overflow: hidden;
+	width: 400px;
+}
+
+.carousel__controls {
+	display: flex;
+}
+
+.carousel__container {
+	display: flex;
+	height: 300px;
+	position: relative;
+	overflow: hidden;
+}
+
+.carousel__image {
+	position: absolute;
+	left: 0;
+	opacity: 0;
+	top: 0;
+	transform: scale(1.1);
+	transition: all .15s ease-out;
+	
+}
+		.carousel__image.active {
+			opacity: 1;
+			transform: scale(1);
+		}
+
+.carousel__button {
+	background: #f2f2f2;
+	border: 0;
+	color: purple;
+	cursor: pointer;
+	font-size: 1rem;
+	flex-grow: 1;
+	outline: none;
+	padding: 1rem;
+	transition: all .1s ease-out;
+	
+}
+		.carousel__button:hover {
+			background: rgba(#e71b1b, .8);
+			
+		}
+
+.flavor-text {
+	display: block;
+	color: rgba(#fff, .5);
+	font-size: .75rem;
+	font-weight: 300;
+	letter-spacing: 2px;
+	line-height: 1.5;
+	margin: 1rem auto;
+	max-width: 100%;
+	text-align: center;
+	text-transform: uppercase;
+	width: 15rem;
+}
