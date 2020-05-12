@@ -1,15 +1,20 @@
 
  .side-bar{
          transition: 1s ease;
-         background-color: white;
+         /* background-color: white; */
+         border-right: 1px solid white;
+ 
+        
      }
     
 
 
      .side-bar a{
-         color:red;
+         color:white;
          display: block;
+         text-align: center;
          text-decoration: none;
+         margin:100px 10px;
      }
 
 
@@ -21,7 +26,12 @@
          position: absolute;
         outline: none;
          z-index: 1;
-    background-color: rgba(64, 194, 133, 0.693);
-         border-color: rgba(64, 194, 133, 0.693);
+            background-color: white;
+         border-color: rgba(247, 247, 247, 0.693);
          border-left: 0;
      }
+     .content{
+         height:100vh;
+         margin: auto;
+     }
+  

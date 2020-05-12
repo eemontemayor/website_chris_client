@@ -22,13 +22,15 @@ export const Sidebar = ({ width, height, children }) => {
         style={{
           transform: `translatex(${xPosition}px)`,
           width: width,
-          minHeight: height
+          minHeight: height,
+          position:'fixed',
         }}
       >
         <button
           onClick={() => toggleMenu()}
           className="toggle-menu"
           style={{
+            backgroundColor:`white`,
             transform: `translate(${width}px, 20vh)`
           }}
         ></button>
