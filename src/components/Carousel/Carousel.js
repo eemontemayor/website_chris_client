@@ -47,28 +47,9 @@ export default class Carousel extends React.Component{
 	
 	componentDidMount() {
 		window.addEventListener('keyup', this.onKeyUp);
-		var exampleURL = "https://api.nasa.gov/EPIC/api/natural";
-		// var exampleURL = ""
-		var apiKey = 'Li6qgIZ2Kh7g5Mm68EfrwYejtafKtEwrX1kuXkEn'; 
-
-		var request = new XMLHttpRequest(); 
-		request.open('GET', exampleURL + '?api_key=' + apiKey, true);
-
-		request.addEventListener('load',()=>{
-
-		if(request.status >= 200 && request.status < 400){
-		var response = JSON.parse(request.responseText);
-		console.log(response[0].image);
-			// this.setState({
-			// 	url :response[0].image
-			// })
-
-		} 
-		else {
-			 console.log("Error in network request: " + request.statusText);
-		}});
-		request.send(null);
-
+	
+		
+	
 
 	}
 	
@@ -99,6 +80,7 @@ export default class Carousel extends React.Component{
 
 	render() {
 		const { images } = this.props;
+		// console.log('images', images)
 		const { currentIndex, isTransitioning, goingLeft } = this.state;
 		
 		return (

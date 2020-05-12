@@ -4,7 +4,9 @@
 	box-shadow: 0 1rem 2rem rgba(purple, .2);
 	margin: 2rem auto;
 	overflow: hidden;
-	width: 400px;
+	min-width: 700px;
+	width: fit-content;
+	min-height: 700px;
 }
 
 .carousel__controls {
@@ -13,18 +15,25 @@
 
 .carousel__container {
 	display: flex;
-	height: 300px;
+	height:500px;
+	/* padding:20px; */
+	align-content: center;
+/* height: 700px; */
+	/* min-width:700px; */
 	position: relative;
 	overflow: hidden;
+
 }
 
 .carousel__image {
-	position: absolute;
+	
+	position: relative;
+	object-fit: cover;
 	left: 0;
 	opacity: 0;
 	top: 0;
-	transform: scale(1.1);
-	transition: all .15s ease-out;
+	transform: scale(.9);
+	transition: all 4.5s ease-out;
 	
 }
 		.carousel__image.active {
@@ -61,9 +70,4 @@
 	text-align: center;
 	text-transform: uppercase;
 	width: 15rem;
-}
-.xxx{
-	height:300px;
-	width:300px;
-
 }

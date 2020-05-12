@@ -17,7 +17,7 @@ export default class LandingPage extends React.Component{
               : res.json().then(img =>{
 
                 const {copyright, date, explanation, hdurl, url, title} = img
-                console.log(url)
+                // console.log(url)
                   this.setState({
                       copyright , date, explanation , hdurl,url,title
                   })
@@ -30,7 +30,7 @@ export default class LandingPage extends React.Component{
 
     }
     render(){
-     console.log('this.state.url', this.state.url)
+    //  console.log('this.state.url', this.state.url)
         return(
             <div className = 'landing_page'>
            {/* {url} */}

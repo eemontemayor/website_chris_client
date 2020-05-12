@@ -3,22 +3,54 @@ import Carousel from '../../components/Carousel/Carousel'
 import './CarouselPage.css'
 
 
-const images = [
-	'https://picsum.photos/400/300/?image=926',
-	'https://picsum.photos/400/300/?image=925',
-	'https://picsum.photos/400/300/?image=924',
-	'https://picsum.photos/400/300/?image=923',
-	'https://picsum.photos/400/300/?image=922',
-	'https://picsum.photos/400/300/?image=921',
-];
+export default class CarouselPage extends React.Component{
+    state={
+        images:[]
+    }
+    componentDidMount() {
+        return fetch(`https://images-api.nasa.gov/search?q=comet`,{
+            headers:{
+                'content-type':'application/json', 
+                
+            }
+        })
+        .then(res => { 
+            (!res.ok)
+              ? res.json().then(e => Promise.reject(e))
+              : res.json().then(img =>{
+                
+                console.log('img', img.collection.items)
+                let imgArr =  img.collection.items.map(i => {
+                    
+                    let arr = i["links"]
+                    
+                    if( Array.isArray(arr) ){
+                     
+                        return arr[0]["href"]
+                    }
+                }
+                ) 
 
+                  this.setState({
+                      images : imgArr
+                  })
+              })
+          })
+          .catch(error => {
+            console.log({error})
+          })
+    }
+    
 
-export default function CarouselPage(){
-    return(
-        <div className = 'carousel__page'>
+    render(){
+      const  images = this.state.images
+     
+      return(
+            <div className = 'carousel__page'>
             CarouselPage
-            <Carousel images = {images}/>
+            <Carousel images = {this.state.images}/>
          
         </div>
     )
+}
 }
