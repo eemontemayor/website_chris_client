@@ -3,12 +3,11 @@
     max-height: 100vh;
     width:100%;
     text-align: center;
-    background-color: rgb(78, 77, 77);
 }
 .landing_pic_container{
 
-	transform: scale(.94);
-    transition: all 5s ease-out;
+    background-color: rgb(141, 141, 141);
+
 
    
 }
@@ -18,5 +17,7 @@
     opacity: .8;
     width: 100vw;
    max-height: 100vh;
+   transform: scale(.94);
+   transition: all 5s ease-out;
 
 }
